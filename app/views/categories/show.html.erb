@@ -1,0 +1,23 @@
+<h2><%=@category.title%></h2>
+<table>
+<% @category.articles.sort_by(&:created_at).each do |article| %>
+<tr>
+  <td>
+   <%= link_to article.title, category_article_path(@category, article)%>
+ </td>
+ <td><%= link_to "Edit", edit_category_article_path(article.category, article)%></td>
+  <td><%= button_to "Delete", category_article_path(@category, article), method: :delete %></td>
+ </tr>
+<% end %>
+</table>
+
+<br>
+
+<%= button_to "Add new article", new_category_article_path(@category, @article), method: "get"%>
+<br>
+
+<footer>
+
+ <%=button_to 'Back', categories_path, method: "get"%>
+
+</footer>

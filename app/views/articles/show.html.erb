@@ -1,0 +1,22 @@
+<h2><%=@article.title%></h2>
+<br>
+<b>Description: </b><br>
+<%=@article.description%>
+<br>
+<br>
+<b>Price:</b> $<%=@article.price%>
+<br>
+<br>
+<b>Contact:</b> <br>
+
+<%=@article.email%>
+<br><br>
+
+
+
+<footer>
+
+ <%=button_to 'Back', category_path(@article.category), method: "get"%>
+
+</footer>
+

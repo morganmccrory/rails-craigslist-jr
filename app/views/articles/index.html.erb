@@ -1,0 +1,12 @@
+<h2>All Articles</h2>
+<table>
+<% @articles.each do |article| %>
+<tr>
+  <td>
+   <%=article.title, article_path(article)%>
+ </td>
+ <td><%= link_to "Edit", edit_category_article_path(article.category, article)%></td>
+  <td><%= button_to "Delete", category_article_path(article.category, article), method: :delete %></td>
+ </tr>
+<% end %>
+
